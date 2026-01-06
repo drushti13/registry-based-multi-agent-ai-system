@@ -50,18 +50,47 @@ flowchart TD
     SightseeingAgent --> Executor
     Executor --> User
 ```
-Tech Stack
+## Tech Stack
 
-Python
+- **Python** – Core programming language
+- **FastAPI** – Used to build the agent registry, orchestrator, and individual agents as HTTP services
+- **LangGraph** – Manages the orchestration flow between router and executor
+- **Ollama (Local LLM)** – Provides on-device LLM reasoning for intelligent agent routing
+- **Requests** – Enables HTTP-based agent-to-agent (A2A) communication
+- **Pydantic** – Ensures structured request and response validation
+- **External APIs**
+  - Open-Meteo – Real-time weather data
+  - OpenTripMap – Sightseeing and places data
 
-FastAPI – Registry, orchestrator, agents
+---
 
-LangGraph – Agent orchestration flow
+## How to Run the Project
 
-Ollama – Local LLM reasoning
+### 1. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+2. Start the Agent Registry
+```
+python registry_app.py
 
-Requests – Inter-agent HTTP calls
+The registry runs on:
+http://127.0.0.1:9000
 
-Pydantic – Data validation
+```
+3. Start the Agents (Run Each in a Separate Terminal)
+```
+python weather.py
+python food.py
+python sightseeing_app.py
+```
+Each agent:
+Starts its own FastAPI server
+Automatically registers with the registry
 
-External APIs – Open-Meteo, OpenTripMap
+4. Start the Orchestrator
+```
+python app.py
+
+The orchestrator runs on:
+http://127.0.0.1:8000
