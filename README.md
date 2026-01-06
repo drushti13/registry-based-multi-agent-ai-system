@@ -76,7 +76,6 @@ python registry_app.py
 
 The registry runs on:
 http://127.0.0.1:9000
-
 ```
 3. Start the Agents (Run Each in a Separate Terminal)
 ```
