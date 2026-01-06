@@ -6,7 +6,6 @@ This project is a **Registry-Based Multi-Agent AI System** that demonstrates how
 
 The system uses a **registry-based agent discovery service**, a **local LLM (Ollama)** for reasoning, and a **lightweight HTTP-based A2A (Agent-to-Agent) protocol** for communication. Agents run as isolated FastAPI services and are selected at runtime based on user intent.
 
----
 
 ## Features
 
@@ -30,8 +29,6 @@ The system uses a **registry-based agent discovery service**, a **local LLM (Oll
   - Router → Executor → End flow
   - Clear separation of planning and execution
   - Deterministic control with agentic reasoning
-
----
 
 ## Architecture & Agent Flow
 
@@ -61,8 +58,6 @@ flowchart TD
 - **External APIs**
   - Open-Meteo – Real-time weather data
   - OpenTripMap – Sightseeing and places data
-
----
 
 ## How to Run the Project
 
